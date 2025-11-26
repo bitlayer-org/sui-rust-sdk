@@ -1851,12 +1851,12 @@ pub mod ledger_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.LedgerService/GetCheckpoint",
+                "/sui.rpc.v2.LedgerService/GetCheckpoint",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
-                    GrpcMethod::new("sui.rpc.v2beta2.LedgerService", "GetCheckpoint"),
+                    GrpcMethod::new("sui.rpc.v2.LedgerService", "GetCheckpoint"),
                 );
             self.inner.unary(req, path, codec).await
         }
