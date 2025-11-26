@@ -1796,12 +1796,12 @@ pub mod ledger_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.LedgerService/GetTransaction",
+                "/sui.rpc.v2.LedgerService/GetTransaction",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
-                    GrpcMethod::new("sui.rpc.v2beta2.LedgerService", "GetTransaction"),
+                    GrpcMethod::new("sui.rpc.v2.LedgerService", "GetTransaction"),
                 );
             self.inner.unary(req, path, codec).await
         }
