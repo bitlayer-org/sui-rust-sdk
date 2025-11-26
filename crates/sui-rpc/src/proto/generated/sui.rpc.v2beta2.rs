@@ -1720,12 +1720,12 @@ pub mod ledger_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.LedgerService/GetServiceInfo",
+                "/sui.rpc.v2.LedgerService/GetServiceInfo",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
-                    GrpcMethod::new("sui.rpc.v2beta2.LedgerService", "GetServiceInfo"),
+                    GrpcMethod::new("sui.rpc.v2.LedgerService", "GetServiceInfo"),
                 );
             self.inner.unary(req, path, codec).await
         }
@@ -1746,11 +1746,11 @@ pub mod ledger_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.LedgerService/GetObject",
+                "/sui.rpc.v2.LedgerService/GetObject",
             );
             let mut req = request.into_request();
             req.extensions_mut()
-                .insert(GrpcMethod::new("sui.rpc.v2beta2.LedgerService", "GetObject"));
+                .insert(GrpcMethod::new("sui.rpc.v2.LedgerService", "GetObject"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn batch_get_objects(
@@ -1770,12 +1770,12 @@ pub mod ledger_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.LedgerService/BatchGetObjects",
+                "/sui.rpc.v2.LedgerService/BatchGetObjects",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
-                    GrpcMethod::new("sui.rpc.v2beta2.LedgerService", "BatchGetObjects"),
+                    GrpcMethod::new("sui.rpc.v2.LedgerService", "BatchGetObjects"),
                 );
             self.inner.unary(req, path, codec).await
         }
@@ -1822,13 +1822,13 @@ pub mod ledger_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.LedgerService/BatchGetTransactions",
+                "/sui.rpc.v2.LedgerService/BatchGetTransactions",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
-                        "sui.rpc.v2beta2.LedgerService",
+                        "sui.rpc.v2.LedgerService",
                         "BatchGetTransactions",
                     ),
                 );
@@ -1877,11 +1877,11 @@ pub mod ledger_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.LedgerService/GetEpoch",
+                "/sui.rpc.v2.LedgerService/GetEpoch",
             );
             let mut req = request.into_request();
             req.extensions_mut()
-                .insert(GrpcMethod::new("sui.rpc.v2beta2.LedgerService", "GetEpoch"));
+                .insert(GrpcMethod::new("sui.rpc.v2.LedgerService", "GetEpoch"));
             self.inner.unary(req, path, codec).await
         }
     }
@@ -2026,7 +2026,7 @@ pub mod ledger_service_server {
         }
         fn call(&mut self, req: http::Request<B>) -> Self::Future {
             match req.uri().path() {
-                "/sui.rpc.v2beta2.LedgerService/GetServiceInfo" => {
+                "/sui.rpc.v2.LedgerService/GetServiceInfo" => {
                     #[allow(non_camel_case_types)]
                     struct GetServiceInfoSvc<T: LedgerService>(pub Arc<T>);
                     impl<
@@ -2072,7 +2072,7 @@ pub mod ledger_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/sui.rpc.v2beta2.LedgerService/GetObject" => {
+                "/sui.rpc.v2.LedgerService/GetObject" => {
                     #[allow(non_camel_case_types)]
                     struct GetObjectSvc<T: LedgerService>(pub Arc<T>);
                     impl<
@@ -2117,7 +2117,7 @@ pub mod ledger_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/sui.rpc.v2beta2.LedgerService/BatchGetObjects" => {
+                "/sui.rpc.v2.LedgerService/BatchGetObjects" => {
                     #[allow(non_camel_case_types)]
                     struct BatchGetObjectsSvc<T: LedgerService>(pub Arc<T>);
                     impl<
@@ -2163,7 +2163,7 @@ pub mod ledger_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/sui.rpc.v2beta2.LedgerService/GetTransaction" => {
+                "/sui.rpc.v2.LedgerService/GetTransaction" => {
                     #[allow(non_camel_case_types)]
                     struct GetTransactionSvc<T: LedgerService>(pub Arc<T>);
                     impl<
@@ -2208,7 +2208,7 @@ pub mod ledger_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/sui.rpc.v2beta2.LedgerService/BatchGetTransactions" => {
+                "/sui.rpc.v2.LedgerService/BatchGetTransactions" => {
                     #[allow(non_camel_case_types)]
                     struct BatchGetTransactionsSvc<T: LedgerService>(pub Arc<T>);
                     impl<
@@ -2257,7 +2257,7 @@ pub mod ledger_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/sui.rpc.v2beta2.LedgerService/GetCheckpoint" => {
+                "/sui.rpc.v2.LedgerService/GetCheckpoint" => {
                     #[allow(non_camel_case_types)]
                     struct GetCheckpointSvc<T: LedgerService>(pub Arc<T>);
                     impl<
@@ -2302,7 +2302,7 @@ pub mod ledger_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/sui.rpc.v2beta2.LedgerService/GetEpoch" => {
+                "/sui.rpc.v2.LedgerService/GetEpoch" => {
                     #[allow(non_camel_case_types)]
                     struct GetEpochSvc<T: LedgerService>(pub Arc<T>);
                     impl<
@@ -2382,7 +2382,7 @@ pub mod ledger_service_server {
         }
     }
     /// Generated gRPC service name
-    pub const SERVICE_NAME: &str = "sui.rpc.v2beta2.LedgerService";
+    pub const SERVICE_NAME: &str = "sui.rpc.v2.LedgerService";
     impl<T> tonic::server::NamedService for LedgerServiceServer<T> {
         const NAME: &'static str = SERVICE_NAME;
     }
@@ -2910,13 +2910,13 @@ pub mod live_data_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.LiveDataService/ListDynamicFields",
+                "/sui.rpc.v2.LiveDataService/ListDynamicFields",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
-                        "sui.rpc.v2beta2.LiveDataService",
+                        "sui.rpc.v2.LiveDataService",
                         "ListDynamicFields",
                     ),
                 );
@@ -2939,13 +2939,13 @@ pub mod live_data_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.LiveDataService/ListOwnedObjects",
+                "/sui.rpc.v2.LiveDataService/ListOwnedObjects",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
-                        "sui.rpc.v2beta2.LiveDataService",
+                        "sui.rpc.v2.LiveDataService",
                         "ListOwnedObjects",
                     ),
                 );
@@ -2968,12 +2968,12 @@ pub mod live_data_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.LiveDataService/GetCoinInfo",
+                "/sui.rpc.v2.LiveDataService/GetCoinInfo",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
-                    GrpcMethod::new("sui.rpc.v2beta2.LiveDataService", "GetCoinInfo"),
+                    GrpcMethod::new("sui.rpc.v2.LiveDataService", "GetCoinInfo"),
                 );
             self.inner.unary(req, path, codec).await
         }
@@ -2994,12 +2994,12 @@ pub mod live_data_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.LiveDataService/GetBalance",
+                "/sui.rpc.v2.LiveDataService/GetBalance",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
-                    GrpcMethod::new("sui.rpc.v2beta2.LiveDataService", "GetBalance"),
+                    GrpcMethod::new("sui.rpc.v2.LiveDataService", "GetBalance"),
                 );
             self.inner.unary(req, path, codec).await
         }
@@ -3020,12 +3020,12 @@ pub mod live_data_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.LiveDataService/ListBalances",
+                "/sui.rpc.v2.LiveDataService/ListBalances",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
-                    GrpcMethod::new("sui.rpc.v2beta2.LiveDataService", "ListBalances"),
+                    GrpcMethod::new("sui.rpc.v2.LiveDataService", "ListBalances"),
                 );
             self.inner.unary(req, path, codec).await
         }
@@ -3046,13 +3046,13 @@ pub mod live_data_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.LiveDataService/SimulateTransaction",
+                "/sui.rpc.v2.LiveDataService/SimulateTransaction",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
-                        "sui.rpc.v2beta2.LiveDataService",
+                        "sui.rpc.v2.LiveDataService",
                         "SimulateTransaction",
                     ),
                 );
@@ -3192,7 +3192,7 @@ pub mod live_data_service_server {
         }
         fn call(&mut self, req: http::Request<B>) -> Self::Future {
             match req.uri().path() {
-                "/sui.rpc.v2beta2.LiveDataService/ListDynamicFields" => {
+                "/sui.rpc.v2.LiveDataService/ListDynamicFields" => {
                     #[allow(non_camel_case_types)]
                     struct ListDynamicFieldsSvc<T: LiveDataService>(pub Arc<T>);
                     impl<
@@ -3238,7 +3238,7 @@ pub mod live_data_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/sui.rpc.v2beta2.LiveDataService/ListOwnedObjects" => {
+                "/sui.rpc.v2.LiveDataService/ListOwnedObjects" => {
                     #[allow(non_camel_case_types)]
                     struct ListOwnedObjectsSvc<T: LiveDataService>(pub Arc<T>);
                     impl<
@@ -3284,7 +3284,7 @@ pub mod live_data_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/sui.rpc.v2beta2.LiveDataService/GetCoinInfo" => {
+                "/sui.rpc.v2.LiveDataService/GetCoinInfo" => {
                     #[allow(non_camel_case_types)]
                     struct GetCoinInfoSvc<T: LiveDataService>(pub Arc<T>);
                     impl<
@@ -3329,7 +3329,7 @@ pub mod live_data_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/sui.rpc.v2beta2.LiveDataService/GetBalance" => {
+                "/sui.rpc.v2.LiveDataService/GetBalance" => {
                     #[allow(non_camel_case_types)]
                     struct GetBalanceSvc<T: LiveDataService>(pub Arc<T>);
                     impl<
@@ -3374,7 +3374,7 @@ pub mod live_data_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/sui.rpc.v2beta2.LiveDataService/ListBalances" => {
+                "/sui.rpc.v2.LiveDataService/ListBalances" => {
                     #[allow(non_camel_case_types)]
                     struct ListBalancesSvc<T: LiveDataService>(pub Arc<T>);
                     impl<
@@ -3419,7 +3419,7 @@ pub mod live_data_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/sui.rpc.v2beta2.LiveDataService/SimulateTransaction" => {
+                "/sui.rpc.v2.LiveDataService/SimulateTransaction" => {
                     #[allow(non_camel_case_types)]
                     struct SimulateTransactionSvc<T: LiveDataService>(pub Arc<T>);
                     impl<
@@ -3503,7 +3503,7 @@ pub mod live_data_service_server {
         }
     }
     /// Generated gRPC service name
-    pub const SERVICE_NAME: &str = "sui.rpc.v2beta2.LiveDataService";
+    pub const SERVICE_NAME: &str = "sui.rpc.v2.LiveDataService";
     impl<T> tonic::server::NamedService for LiveDataServiceServer<T> {
         const NAME: &'static str = SERVICE_NAME;
     }
@@ -4134,12 +4134,12 @@ pub mod move_package_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.MovePackageService/GetPackage",
+                "/sui.rpc.v2.MovePackageService/GetPackage",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
-                    GrpcMethod::new("sui.rpc.v2beta2.MovePackageService", "GetPackage"),
+                    GrpcMethod::new("sui.rpc.v2.MovePackageService", "GetPackage"),
                 );
             self.inner.unary(req, path, codec).await
         }
@@ -4160,12 +4160,12 @@ pub mod move_package_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.MovePackageService/GetDatatype",
+                "/sui.rpc.v2.MovePackageService/GetDatatype",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
-                    GrpcMethod::new("sui.rpc.v2beta2.MovePackageService", "GetDatatype"),
+                    GrpcMethod::new("sui.rpc.v2.MovePackageService", "GetDatatype"),
                 );
             self.inner.unary(req, path, codec).await
         }
@@ -4186,12 +4186,12 @@ pub mod move_package_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.MovePackageService/GetFunction",
+                "/sui.rpc.v2.MovePackageService/GetFunction",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
-                    GrpcMethod::new("sui.rpc.v2beta2.MovePackageService", "GetFunction"),
+                    GrpcMethod::new("sui.rpc.v2.MovePackageService", "GetFunction"),
                 );
             self.inner.unary(req, path, codec).await
         }
@@ -4212,13 +4212,13 @@ pub mod move_package_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.MovePackageService/ListPackageVersions",
+                "/sui.rpc.v2.MovePackageService/ListPackageVersions",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
-                        "sui.rpc.v2beta2.MovePackageService",
+                        "sui.rpc.v2.MovePackageService",
                         "ListPackageVersions",
                     ),
                 );
@@ -4344,7 +4344,7 @@ pub mod move_package_service_server {
         }
         fn call(&mut self, req: http::Request<B>) -> Self::Future {
             match req.uri().path() {
-                "/sui.rpc.v2beta2.MovePackageService/GetPackage" => {
+                "/sui.rpc.v2.MovePackageService/GetPackage" => {
                     #[allow(non_camel_case_types)]
                     struct GetPackageSvc<T: MovePackageService>(pub Arc<T>);
                     impl<
@@ -4390,7 +4390,7 @@ pub mod move_package_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/sui.rpc.v2beta2.MovePackageService/GetDatatype" => {
+                "/sui.rpc.v2.MovePackageService/GetDatatype" => {
                     #[allow(non_camel_case_types)]
                     struct GetDatatypeSvc<T: MovePackageService>(pub Arc<T>);
                     impl<
@@ -4436,7 +4436,7 @@ pub mod move_package_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/sui.rpc.v2beta2.MovePackageService/GetFunction" => {
+                "/sui.rpc.v2.MovePackageService/GetFunction" => {
                     #[allow(non_camel_case_types)]
                     struct GetFunctionSvc<T: MovePackageService>(pub Arc<T>);
                     impl<
@@ -4482,7 +4482,7 @@ pub mod move_package_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/sui.rpc.v2beta2.MovePackageService/ListPackageVersions" => {
+                "/sui.rpc.v2.MovePackageService/ListPackageVersions" => {
                     #[allow(non_camel_case_types)]
                     struct ListPackageVersionsSvc<T: MovePackageService>(pub Arc<T>);
                     impl<
@@ -4566,7 +4566,7 @@ pub mod move_package_service_server {
         }
     }
     /// Generated gRPC service name
-    pub const SERVICE_NAME: &str = "sui.rpc.v2beta2.MovePackageService";
+    pub const SERVICE_NAME: &str = "sui.rpc.v2.MovePackageService";
     impl<T> tonic::server::NamedService for MovePackageServiceServer<T> {
         const NAME: &'static str = SERVICE_NAME;
     }
@@ -5167,13 +5167,13 @@ pub mod signature_verification_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.SignatureVerificationService/VerifySignature",
+                "/sui.rpc.v2.SignatureVerificationService/VerifySignature",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
-                        "sui.rpc.v2beta2.SignatureVerificationService",
+                        "sui.rpc.v2.SignatureVerificationService",
                         "VerifySignature",
                     ),
                 );
@@ -5280,7 +5280,7 @@ pub mod signature_verification_service_server {
         }
         fn call(&mut self, req: http::Request<B>) -> Self::Future {
             match req.uri().path() {
-                "/sui.rpc.v2beta2.SignatureVerificationService/VerifySignature" => {
+                "/sui.rpc.v2.SignatureVerificationService/VerifySignature" => {
                     #[allow(non_camel_case_types)]
                     struct VerifySignatureSvc<T: SignatureVerificationService>(
                         pub Arc<T>,
@@ -5366,7 +5366,7 @@ pub mod signature_verification_service_server {
         }
     }
     /// Generated gRPC service name
-    pub const SERVICE_NAME: &str = "sui.rpc.v2beta2.SignatureVerificationService";
+    pub const SERVICE_NAME: &str = "sui.rpc.v2.SignatureVerificationService";
     impl<T> tonic::server::NamedService for SignatureVerificationServiceServer<T> {
         const NAME: &'static str = SERVICE_NAME;
     }
@@ -5511,13 +5511,13 @@ pub mod subscription_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.SubscriptionService/SubscribeCheckpoints",
+                "/sui.rpc.v2.SubscriptionService/SubscribeCheckpoints",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
-                        "sui.rpc.v2beta2.SubscriptionService",
+                        "sui.rpc.v2.SubscriptionService",
                         "SubscribeCheckpoints",
                     ),
                 );
@@ -5642,7 +5642,7 @@ pub mod subscription_service_server {
         }
         fn call(&mut self, req: http::Request<B>) -> Self::Future {
             match req.uri().path() {
-                "/sui.rpc.v2beta2.SubscriptionService/SubscribeCheckpoints" => {
+                "/sui.rpc.v2.SubscriptionService/SubscribeCheckpoints" => {
                     #[allow(non_camel_case_types)]
                     struct SubscribeCheckpointsSvc<T: SubscriptionService>(pub Arc<T>);
                     impl<
@@ -5728,7 +5728,7 @@ pub mod subscription_service_server {
         }
     }
     /// Generated gRPC service name
-    pub const SERVICE_NAME: &str = "sui.rpc.v2beta2.SubscriptionService";
+    pub const SERVICE_NAME: &str = "sui.rpc.v2.SubscriptionService";
     impl<T> tonic::server::NamedService for SubscriptionServiceServer<T> {
         const NAME: &'static str = SERVICE_NAME;
     }
@@ -6901,13 +6901,13 @@ pub mod transaction_execution_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/sui.rpc.v2beta2.TransactionExecutionService/ExecuteTransaction",
+                "/sui.rpc.v2.TransactionExecutionService/ExecuteTransaction",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
-                        "sui.rpc.v2beta2.TransactionExecutionService",
+                        "sui.rpc.v2.TransactionExecutionService",
                         "ExecuteTransaction",
                     ),
                 );
@@ -7013,7 +7013,7 @@ pub mod transaction_execution_service_server {
         }
         fn call(&mut self, req: http::Request<B>) -> Self::Future {
             match req.uri().path() {
-                "/sui.rpc.v2beta2.TransactionExecutionService/ExecuteTransaction" => {
+                "/sui.rpc.v2.TransactionExecutionService/ExecuteTransaction" => {
                     #[allow(non_camel_case_types)]
                     struct ExecuteTransactionSvc<T: TransactionExecutionService>(
                         pub Arc<T>,
@@ -7099,7 +7099,7 @@ pub mod transaction_execution_service_server {
         }
     }
     /// Generated gRPC service name
-    pub const SERVICE_NAME: &str = "sui.rpc.v2beta2.TransactionExecutionService";
+    pub const SERVICE_NAME: &str = "sui.rpc.v2.TransactionExecutionService";
     impl<T> tonic::server::NamedService for TransactionExecutionServiceServer<T> {
         const NAME: &'static str = SERVICE_NAME;
     }
